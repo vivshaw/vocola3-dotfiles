@@ -32,7 +32,3 @@ get graph = "git log --graph --oneline"{Enter};
 get push = "git push ";
 get pull = "git pull ";
 get remote = "git remote -v";
-
-#Fixes for annoying extra spaces
-back tab = {Backspace}{Tab};
-Do it = {Backspace}{Enter};
