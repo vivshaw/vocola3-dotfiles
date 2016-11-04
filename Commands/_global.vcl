@@ -108,3 +108,4 @@ Slam 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "
 Window Left = Window.MoveToScreenEdge(Left);
 Window Right = Window.MoveToScreenEdge(Right);
 Swap Out = {Alt+Tab};
+Launch <_startableName> = HearCommand("start $1");
