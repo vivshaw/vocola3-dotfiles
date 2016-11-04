@@ -17,7 +17,7 @@ new line = {End}{Enter};
 #Selection in page
 grab this = {Ctrl+r};
 grab line = {Ctrl+l};
-grab 1..30 line = {Ctrl+l}{Shift+Down_ Eval($1 - 1)};
+grab 1..30 (line | Lines) = {Ctrl+l}{Shift+Down_ Eval($1 - 1)};
 grab scope = {Ctrl+Shift+Space};
 grab left = {Shift+Ctrl+Left};
 grab 1..20 left = {Shift+Ctrl+Left_$1};
@@ -30,13 +30,17 @@ grab 1..20 = {Shift+Ctrl+Right_$1};
 #Deletion
 scratch = {Backspace};
 scratch 1..99 = {Backspace_$1};
-scratch 1..20 words = {Shift+Ctrl+Left_$1}{Backspace};
+scratch 1..20 (word | words) = {Shift+Ctrl+Left_$1}{Backspace};
 
 Del = {Delete};
 Del 1..99 = {Delete_$1};
-Del 1..20 words = {Shift+Ctrl+Right_$1}{Del};
+Del 1..20 (word | words) = {Shift+Ctrl+Right_$1}{Del};
 
 kill 1..99 = {Home}{Shift+Down_$1}{Backspace};
+
+
+#Cut, copy, and paste
+cut line = {Ctrl+l}{Ctrl+x};
 
 
 #Tab navigation
@@ -50,25 +54,26 @@ save this = {Ctrl+s};
 
 
 #Symbols and keys
-Sem = ";";
 bang = {!};
-crunch = "#";
-zip = "-";
-eek = "=";
 cash = "$";
-dot = ".";
-colon = ":";
 cent = "%";
+colon = ":";
+crunch = "#";
+dash = "-";
+eek = "=";
+dot = ".";
+pipe = "|";
+plus = "+";
+quick = "?";
+sand = "&";
+score = "_";
+sem = ";";
+slash = "/";
 space = " ";
 star = "*";
-sand = "&";
-plus = "+";
-slash = "/";
-dash = "\";
-quick = "?";
-score = "_";
 swipe = ",";
-
+tick = "`";
+zip = "\";
 
 
 #Matched symbols (parentheses and braces)
@@ -90,10 +95,9 @@ rate = ">";
 
 squares = "[]"{Left};
 left square = "[";
-right square = "}";
+right square = "]";
 
 
 #HTML
 div = "div";
 span = "span";
-ID = "id";

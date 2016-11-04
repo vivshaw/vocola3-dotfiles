@@ -19,7 +19,7 @@ Oscar = {o};
 Papa = {p};
 Queen = {q};
 Romeo = {r};
-Supper = {s};
+Sigma = {s};
 Tango = {t};
 Uni = {u};
 Victor = {v};
@@ -46,7 +46,7 @@ Sky Oscar = {O};
 Sky Papa = {P};
 Sky Queen = {Q};
 Sky Romeo = {R};
-Sky Supper = {S};
+Sky Sigma = {S};
 Sky Tango = {T};
 Sky Uni = {U};
 Sky Victor = {V};
@@ -64,7 +64,7 @@ zecks = "6";
 z ben = "7";
 acht = "8";
 knowing = "9";
-tsero = "0";
+Newell = "0";
 
 
 #Keystrokes
@@ -97,11 +97,11 @@ Book 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.ToTitleCaseWord(Clipboard.GetTex
 Camel = Dictation.Replace( String.ToCamelCaseWord( Dictation.Get() ));
 Camel 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.ToCamelCaseWord(Clipboard.GetText());
 Spine = Dictation.Replace(String.JoinWords(Dictation.Get(), "-"));
-Spine 1..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "-");
+Spine 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "-");
 Snake = Dictation.Replace(String.JoinWords(Dictation.Get(), "_"));
-Snake 1..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "_");
+Snake 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "_");
 Slam = Dictation.Replace(String.JoinWords(Dictation.Get(), ""));
-Slam 1..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "");
+Slam 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "");
 
 
 #Window manipulation
