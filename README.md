@@ -1,5 +1,5 @@
 # vocola3-dotfiles
-This is my grammar for voice programming using Windows Speech Recognition and the [Vocola 3 voice command language](http://vocola.net/default.asp). This project started because I developed nerve
+This is my grammar for [voice programming](http://vocola.net/programming-by-voice-FAQ.html) using Windows Speech Recognition and the [Vocola 3 voice command language](http://vocola.net/default.asp). This project started because I developed nerve
 injuries in my wrists and elbows that prevented me from coding for a long time. But after seeing projects like [VoiceCode.io](VoiceCode.io), [Aenea](https://github.com/dictation-toolbox/aenea),
 [Silvius](http://voxhub.io/silvius), and [Tavis Rudd's project](http://ergoemacs.org/emacs/using_voice_to_code.html), I decided to write my own grammar and try voice programming. At the moment,
 it's only good enough for some basic web coding, browser use, and Git Bash, but I hope to improve it until I can use it for all of my development. I will likely migrate to a Dragon-based
