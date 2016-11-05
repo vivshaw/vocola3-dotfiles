@@ -1,7 +1,12 @@
 ##Global voice commands
 #Variable declarations
-<direction>  := Left | Right | Up | Down;
+<n> := 1..99;
+<small_n> := 1..20;
 <left_right> := Left | Right;
+<direction>  := Left | Right | Up | Down;
+<direction_two> := (rick = right
+	| dune = down);
+<start_end> := (start = Home | End);
 
 
 #Phonetic alphabet
@@ -77,11 +82,11 @@ Newell = "0";
 bang = {!};
 cash = "$";
 cent = "%";
-colon = ":";
 crunch = "#";
 dash = "-";
-eek = "=";
 dot = ".";
+eek = "=";
+face = ":";
 pipe = "|";
 plus = "+";
 quick = "?";
@@ -122,41 +127,40 @@ right square = "]";
 Ta = {Space};
 Act = {Esc};
 Slap = {Enter};
-Slap 1..10 = {Enter_$1};
+Slap <small_n> = {Enter_$1};
 
 
 #Navigation
-Rick = {Right};
-Dune = {Down};
-<direction> 1..99 = {$1_$2};
+<direction> <n> = {$1_$2};
+<direction_two> = {$1};
+<direction_two> <n> = {$1_$2};
 jump <left_right> = {Ctrl+$1};
-jump 1..20 <left_right> = {Ctrl+$2_$1};
-jump 1..20 = {Ctrl+Right_$1};
-line start = {Home};
-line end = {End};
-jump to the end = {Ctrl+End};
+jump <small_n> <left_right> = {Ctrl+$2_$1};
+jump <small_n> = {Ctrl+Right_$1};
+line <start_end> = {$1};
+jump to the <start_end> = {Ctrl+$1};
 new line = {End}{Enter};
 
 
 #Selection
-grab 1..30 (line | Lines) = {Ctrl+l}{Shift+Down_ Eval($1 - 1)};
+grab <small_n> (line | Lines) = {Ctrl+l}{Shift+Down_ Eval($1 - 1)};
 grab <left_right> = {Shift+Ctrl+$1};
-grab 1..20 <left_right> = {Shift+Ctrl+$2_$1};
-grab 1..20 = {Shift+Ctrl+Right_$1};
+grab <small_n> <left_right> = {Shift+Ctrl+$2_$1};
+grab <small_n> = {Shift+Ctrl+Right_$1};
 grab left end = {Shift+Home};
 grab right end = {Shift+End};
 
 
 #Deletion
 scratch = {Backspace};
-scratch 1..99 = {Backspace_$1};
-scratch 1..20 (word | words) = {Shift+Ctrl+Left_$1}{Backspace};
+scratch <n> = {Backspace_$1};
+scratch <small_n> (word | words) = {Shift+Ctrl+Left_$1}{Backspace};
 
 Del = {Delete};
-Del 1..99 = {Delete_$1};
-Del 1..20 (word | words) = {Shift+Ctrl+Right_$1}{Del};
+Del <n> = {Delete_$1};
+Del <small_n> (word | words) = {Shift+Ctrl+Right_$1}{Del};
 
-kill 1..99 = {Home}{Shift+Down_$1}{Backspace};
+kill <n> = {Home}{Shift+Down_$1}{Backspace};
 
 
 #Case and spacing
@@ -187,7 +191,6 @@ Slam 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "
 #Window manipulation
 Swap Out = {Alt+Tab};
 Search for = {Ctrl+f};
-Window Left = Window.MoveToScreenEdge(Left);
-Window Right = Window.MoveToScreenEdge(Right);
+Window <left_right> = Window.MoveToScreenEdge($1);
 Launch <_startableName> = HearCommand("start $1");
 click this = {LeftButton};
