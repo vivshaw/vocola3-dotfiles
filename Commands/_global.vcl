@@ -7,7 +7,8 @@
 <direction>  := Left | Right | Up | Down;
 <direction_two> := (rick = right
 	| leb = left
-	| dune = down);
+	| ugh = up
+	| doom = down);
 
 <start_end> := (start = Home | End);
 
@@ -18,13 +19,15 @@
 <direction> <n> = {$1_$2};
 <direction_two> = {$1};
 <direction_two> <n> = {$1_$2};
+<direction_two> oh = {Shift+$1};
 jump <left_right> = {Ctrl+$1};
 jump <small_n> <left_right> = {Ctrl+$2_$1};
 jump <small_n> = {Ctrl+Right_$1};
 line <start_end> = {$1};
+jump <start_end> = {Ctrl+$1};
 ricky = {end};
 lebby = {home};
-jump to the <start_end> = {Ctrl+$1};
+
 new line = {End}{Enter};
 
 
