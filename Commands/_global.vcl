@@ -12,22 +12,26 @@
 
 <start_end> := (start = Home | End);
 
-<abbreviations> := (attribute = attr | define = def | function = func);
+<abbreviations> := (argument = args
+	| attribute = attr
+	| define = def
+	| function = func
+	| line = ln);
 
 
 #Navigation
-<direction> <n> = {$1_$2};
 <direction_two> = {$1};
-<direction_two> <n> = {$1_$2};
-<direction_two> oh = {Shift+$1};
+(<direction> | <direction_two>) <n> = {$1_$2};
+(<direction> | <direction_two>) oh = {Shift+$1};
 jump <left_right> = {Ctrl+$1};
 jump <small_n> <left_right> = {Ctrl+$2_$1};
 jump <small_n> = {Ctrl+Right_$1};
 line <start_end> = {$1};
 jump <start_end> = {Ctrl+$1};
-ricky = {end};
-lebby = {home};
-
+(righty | ricky) = {end};
+(lefty | lebby) = {home};
+(up | ug) way = {Ctrl+Home};
+(down | doom) way = {Ctrl+End};
 new line = {End}{Enter};
 
 
@@ -72,25 +76,34 @@ Spine = Dictation.Replace(String.JoinWords(Dictation.Get(), "-"));
 Spine 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "-");
 Snake = Dictation.Replace(String.JoinWords(Dictation.Get(), "_"));
 Snake 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "_");
+Dottie = Dictation.Replace(String.JoinWords(Dictation.Get(), "."));
+Dottie 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), ".");
 Slam = Dictation.Replace(String.JoinWords(Dictation.Get(), ""));
 Slam 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "");
 
 
 #Abbreviation
-snip <abbreviations> = $1 " ";
-
+snip <abbreviations> = $1;
+snipe <abbreviations> = $1 " ";
 
 #Window manipulation
 Swap Out = {Alt+Tab};
 Search for = {Ctrl+f};
 Window <left_right> = Window.MoveToScreenEdge($1);
 Launch <_startableName> = HearCommand("start $1");
+
+$if Open | New | Save | File | Attachment | Browse | Directory;
+  Go Up = ..{Enter};
+  Go Up <n> = Repeat($1, ..\) {Enter};
+$end
+
+#Mouse
 chips = {LeftButton};
 dubs = {LeftButton}{LeftButton};
+trips = {LeftButton}{LeftButton}{LeftButton};
 
 #Miscellaneous keystrokes
 Ta = {Space};
 Act = {Esc};
 Slap = {Enter};
 Slap <small_n> = {Enter_$1};
-
