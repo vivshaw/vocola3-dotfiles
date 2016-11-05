@@ -2,10 +2,12 @@
 #Variable declarations
 <n> := 1..99;
 <small_n> := 1..20;
+
 <left_right> := Left | Right;
 <direction>  := Left | Right | Up | Down;
 <direction_two> := (rick = right
 	| dune = down);
+
 <start_end> := (start = Home | End);
 
 
@@ -143,7 +145,6 @@ new line = {End}{Enter};
 
 
 #Selection
-grab <small_n> (line | Lines) = {Ctrl+l}{Shift+Down_ Eval($1 - 1)};
 grab <left_right> = {Shift+Ctrl+$1};
 grab <small_n> <left_right> = {Shift+Ctrl+$2_$1};
 grab <small_n> = {Shift+Ctrl+Right_$1};
