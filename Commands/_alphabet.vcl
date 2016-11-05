@@ -1,59 +1,36 @@
 ##Global phonetic alphabet
+<alpha> := (Arch = a
+	| Bravo = b
+	| Charlie = c
+	| Delta = d
+	| Echo = e
+	| Fox = f
+	| Golf = g
+	| Hotel = h
+	| India = i
+	| Julie = j
+	| Kilo = k
+	| Lake = l
+	| Mike = m
+	| Norma = n
+	| Oscar = o
+	| Papa = p
+	| Queen = q
+	| Romeo = r
+	| Sigma = s
+	| Tango = t
+	| Uni = u
+	| Victor = v
+	| Whiskey = w
+	| X-ray = x
+	| Yankee = y
+	| Zulu = z);
+
 
 #Letters
-Arch = {a};
-Bravo = {b};
-Charlie = {c};
-Delta = {d};
-Echo = {e};
-Fox = {f};
-Golf = {g};
-Hotel = {h};
-India = {i};
-Julie = {j};
-Kilo = {k};
-Lake = {l};
-Mike = {m};
-Norma = {n};
-Oscar = {o};
-Papa = {p};
-Queen = {q};
-Romeo = {r};
-Sigma = {s};
-Tango = {t};
-Uni = {u};
-Victor = {v};
-Whiskey = {w};
-X-ray = {x};
-Yankee = {y};
-Zulu = {z};
 
-Sky Arch = {A};
-Sky Bravo = {B};
-Sky Charlie = {C};
-Sky Delta = {D};
-Sky Echo = {E};
-Sky Fox = {F};
-Sky Golf = {G};
-Sky Hotel = {H};
-Sky India = {I};
-Sky Julie = {J};
-Sky Kilo = {K};
-Sky Lake = {L};
-Sky Mike = {M};
-Sky Norma = {N};
-Sky Oscar = {O};
-Sky Papa = {P};
-Sky Queen = {Q};
-Sky Romeo = {R};
-Sky Sigma = {S};
-Sky Tango = {T};
-Sky Uni = {U};
-Sky Victor = {V};
-Sky Whiskey = {W};
-Sky X-ray = {X};
-Sky Yankee = {Y};
-Sky Zulu = {Z};
+<alpha> = $1;
+sky <alpha> = {Shift+$1};
 
 
 #Numbers
