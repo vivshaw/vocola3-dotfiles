@@ -6,16 +6,12 @@
 <left_right> := Left | Right;
 <direction>  := Left | Right | Up | Down;
 <direction_two> := (rick = right
+	| leb = left
 	| dune = down);
 
 <start_end> := (start = Home | End);
 
-
-#Keystrokes
-Ta = {Space};
-Act = {Esc};
-Slap = {Enter};
-Slap <small_n> = {Enter_$1};
+<abbreviations> := (attribute = attr | define = def | function = func);
 
 
 #Navigation
@@ -26,6 +22,8 @@ jump <left_right> = {Ctrl+$1};
 jump <small_n> <left_right> = {Ctrl+$2_$1};
 jump <small_n> = {Ctrl+Right_$1};
 line <start_end> = {$1};
+ricky = {end};
+lebby = {home};
 jump to the <start_end> = {Ctrl+$1};
 new line = {End}{Enter};
 
@@ -75,9 +73,21 @@ Slam = Dictation.Replace(String.JoinWords(Dictation.Get(), ""));
 Slam 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "");
 
 
+#Abbreviation
+snip <abbreviations> = $1 " ";
+
+
 #Window manipulation
 Swap Out = {Alt+Tab};
 Search for = {Ctrl+f};
 Window <left_right> = Window.MoveToScreenEdge($1);
 Launch <_startableName> = HearCommand("start $1");
-click this = {LeftButton};
+chips = {LeftButton};
+dubs = {LeftButton}{LeftButton};
+
+#Miscellaneous keystrokes
+Ta = {Space};
+Act = {Esc};
+Slap = {Enter};
+Slap <small_n> = {Enter_$1};
+

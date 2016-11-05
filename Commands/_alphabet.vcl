@@ -100,6 +100,7 @@ Bing = "'";
 Paren = "()"{Left};
 left paren = "(";
 right paren = ")";
+paroo = "()";
 
 brace = "{}"{Left};
 left brace = "{";
@@ -112,3 +113,6 @@ rate = ">";
 squares = "[]"{Left};
 left square = "[";
 right square = "]";
+
+#Combo symbols
+prexter = '("")'{Left}{Left};
