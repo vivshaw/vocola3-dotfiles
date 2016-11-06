@@ -11,25 +11,13 @@ Line <n> 10..99 = {Ctrl+g} $1 $2   {Enter};
 
 #Selection in page
 grab this = {Ctrl+r};
-grab line = {Ctrl+l};
 grab scope = {Ctrl+Shift+Space};
-grab <small_n> (line | Lines) = {Ctrl+l}{Shift+Down_ Eval($1 - 1)};
-
-
-#Cut, copy, and paste
-<cut_copy> := (cut = "Ctrl+x" | copy = "Ctrl+c");
-<cut_copy> line = {Ctrl+l}{$1}{Left};
-<cut_copy> <small_n> (line | lines) = HearCommand("grab " $2 " line"){$1};
 
 
 #Tab navigation
 next tab = {Ctrl+PgDn};
 last tab = {Ctrl+PgUp};
 zap it = {Ctrl+w};
-
-
-#Program shortcuts
-save this = {Ctrl+s};
 
 
 ##Programming grammar

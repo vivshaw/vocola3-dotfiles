@@ -41,18 +41,24 @@ grab <small_n> <left_right> = {Shift+Ctrl+$2_$1};
 grab <small_n> = {Shift+Ctrl+Right_$1};
 grab left end = {Shift+Home};
 grab right end = {Shift+End};
+grab line = {Home}{Shift+End}{Shift+Right};
+grab <small_n> (line | Lines) = {Home}{Shift+End}{Shift+Right}{Shift+Down_ Eval($1 - 1)};
 
 
 #Deletion
 scratch = {Backspace};
 scratch <n> = {Backspace_$1};
 scratch <small_n> (word | words) = {Shift+Ctrl+Left_$1}{Backspace};
-
 Del = {Delete};
 Del <n> = {Delete_$1};
 Del <small_n> (word | words) = {Shift+Ctrl+Right_$1}{Del};
-
 kill <n> = {Home}{Shift+Down_$1}{Backspace};
+
+
+#Cut, copy, and paste
+<cut_copy> := (cut = "Ctrl+x" | copy = "Ctrl+c" | cop = "Ctrl+c");
+<cut_copy> line = {Home}{Shift+End}{Shift+Right}{$1}{Home};
+<cut_copy> <small_n> (line | lines) = HearCommand("grab " $2 " line"){$1}{Home};
 
 
 #Case and spacing
@@ -86,21 +92,29 @@ Slam 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.JoinWords(Clipboard.GetText(), "
 snip <abbreviations> = $1;
 snipe <abbreviations> = $1 " ";
 
+
 #Window manipulation
 Swap Out = {Alt+Tab};
 Search for = {Ctrl+f};
 Window <left_right> = Window.MoveToScreenEdge($1);
 Launch <_startableName> = HearCommand("start $1");
 
+
+#Program shortcuts
+save this = {Ctrl+s};
+
+
 $if Open | New | Save | File | Attachment | Browse | Directory;
   Go Up = ..{Enter};
   Go Up <n> = Repeat($1, ..\) {Enter};
 $end
 
+
 #Mouse
 chips = {LeftButton};
 dubs = {LeftButton}{LeftButton};
 trips = {LeftButton}{LeftButton}{LeftButton};
+
 
 #Miscellaneous keystrokes
 Ta = {Space};
