@@ -15,3 +15,7 @@ zap it  = {Ctrl+w};
 
 #Navigate in page
 page top = {g}{g};
+
+#Next/last
+next page = "]" "]";
+last page = "[" "[";
