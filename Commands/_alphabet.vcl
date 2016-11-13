@@ -55,6 +55,7 @@ dash = "-";
 dot = ".";
 eek = "=";
 face = ":";
+hat = "^";
 pipe = "|";
 plus = "+";
 quick = "?";
@@ -70,9 +71,9 @@ zip = "\";
 
 
 #Matched symbols (parentheses and braces)
-Quote = '"';
+Quote = '""'{Left};
 
-Bing = "'";
+Bing = "''"{Left};
 
 Paren = "()"{Left};
 left paren = "(";

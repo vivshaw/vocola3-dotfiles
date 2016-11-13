@@ -19,3 +19,6 @@ page top = {g}{g};
 #Next/last
 next page = "]" "]";
 last page = "[" "[";
+
+#Search
+find = "/";
