@@ -8,7 +8,3 @@ on GitHub.
 
 This grammar is still in heavy development, and is rather a mess at the moment. I'll be updating this readme with a description of the commands as I implement them.
 
-## Installation
-In order to use this grammar, you'll first need to activate Windows Speech Recognition and install [Vocola 3](http://vocola.net/default.asp). You'll also need Sublime Text, Git Bash, and the Chrome
-browser with Vimium, as these were the applications that I designed the grammar around. Once these are all working, you can clone this repo into your Vocola 3 settings folder (likely at
-C:\Users\YourName\Documents\Vocola3\), replacing its contents.

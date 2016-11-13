@@ -1,4 +1,5 @@
 ##Global voice commands
+
 #Variable declarations
 <n> := 1..99;
 <small_n> := 1..20;
@@ -16,7 +17,10 @@
 	| attribute = attr
 	| define = def
 	| function = func
-	| line = ln);
+	| integer = int
+	| length = len
+	| line = ln
+	| string = str);
 
 
 #Navigation
@@ -114,6 +118,8 @@ $end
 chips = {LeftButton};
 dubs = {LeftButton}{LeftButton};
 trips = {LeftButton}{LeftButton}{LeftButton};
+rips = {RightButton};
+mids = {MiddleButton};
 
 
 #Miscellaneous keystrokes
@@ -121,3 +127,4 @@ Ta = {Space};
 Act = {Esc};
 Slap = {Enter};
 Slap <small_n> = {Enter_$1};
+close = {Alt+F4};
