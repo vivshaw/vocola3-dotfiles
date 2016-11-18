@@ -21,9 +21,12 @@ $elseif .java;
 		Repeat(Eval($1 - 1), " * "{Down}{Home})
 		" * "{End}{Enter}{Home}" */" {Up_$1};
 $else
-	Comment <small_n> [Lines] = Repeat($1, "{Home}#{Down}") {Up_$1};
+	Comment <small_n> [Lines] = Repeat($1, "{Home}# {Down}") {Up_$1};
 $end
 
 #HTML
 div = "div";
 span = "span";
+
+uncomment <small_n> lines = Repeat($1, {Home}{Del_2}{Down});
+

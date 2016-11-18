@@ -54,26 +54,33 @@ crunch = "#";
 dash = "-";
 dot = ".";
 eek = "=";
+quals = " = ";
 face = ":";
 hat = "^";
 pipe = "|";
 plus = "+";
+ploose = " + ";
 quick = "?";
 sand = "&";
 score = "_";
 sem = ";";
-slash = "/";
+slish = "/";
+slash = " / ";
 space = " ";
 star = "*";
-swipe = ",";
+stare = " * ";
+swip = ",";
+swipe = ", ";
 tick = "`";
 zip = "\";
 
 
 #Matched symbols (parentheses and braces)
-Quote = '""'{Left};
+Quote = '"';
+Quotes = '""'{Left};
 
-Bing = "''"{Left};
+Bing = "'";
+Bings = "''"{Left};
 
 Paren = "()"{Left};
 left paren = "(";
