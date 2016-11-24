@@ -51,13 +51,15 @@ bang = {!};
 cash = "$";
 cent = "%";
 crunch = "#";
-dash = "-";
+dish = "-";
+dash = " - ";
 dot = ".";
 eek = "=";
-quals = " = ";
+qual = " = ";
 face = ":";
 hat = "^";
-pipe = "|";
+pip = "|";
+pipe = " | ";
 plus = "+";
 ploose = " + ";
 quick = "?";
@@ -66,7 +68,6 @@ score = "_";
 sem = ";";
 slish = "/";
 slash = " / ";
-space = " ";
 star = "*";
 stare = " * ";
 swip = ",";
@@ -91,13 +92,14 @@ brace = "{}"{Left};
 left brace = "{";
 right brace = "}";
 
-bracks = "<>"{Left};
+brack = "<>"{Left};
 late = "<";
 rate = ">";
 
-squares = "[]"{Left};
+square = "[]"{Left};
 left square = "[";
 right square = "]";
 
 #Combo symbols
 prexter = '("")'{Left}{Left};
+praise it = '({})'{Left}{Left};
