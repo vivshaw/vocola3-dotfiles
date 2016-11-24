@@ -22,3 +22,6 @@ last page = "[" "[";
 
 #Search
 find = "/";
+
+#news
+google news = "news.google.com";
