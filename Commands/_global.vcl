@@ -17,10 +17,13 @@
 	| attribute = attr
 	| define = def
 	| function = func
+	| image = img
 	| integer = int
 	| length = len
 	| line = ln
-	| string = str);
+	| pixel = px
+	| string = str
+	| variable = var);
 
 
 #Navigation
@@ -108,7 +111,7 @@ Launch <_startableName> = HearCommand("start $1");
 save this = {Ctrl+s};
 
 
-$if Open | New | Save | File | Attachment | Browse | Directory;
+$if Open | New | Save | File | Attachment | Browse | Directory ;
   Go Up = ..{Enter};
   Go Up <n> = Repeat($1, ..\) {Enter};
 $end
