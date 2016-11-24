@@ -44,24 +44,42 @@ list item = "<li></li>"{Left_5};
 	| form left = '<form action="">'
 	| form right = '</form>');
 make a <form> = $1;
-
-<tag> := <form>
-	| <para>;
-wrap(x, y) := {Ctrl+x} Wait(30) $x 
-			{Ctrl+v} Wait(30) $y
+wrap form = wrap('<form action="">', '</form>')
 			{Home}{Right_14};
+
+<button> := (button left = '<button type="">'
+	| button right = '</button>');
+wrap button = wrap('<button type="">', '</button>')
+	{Home}{Right_14};
+
+label = '<label></label>'{Left_8};
+
+input() := '<input type="" name="">'{Left_10};
+<input_type> := (radio | checkbox | button);
+make an input = input();
+input <input_type> = input() $1 {Right_8};
+
+<tag> := <para>;
+wrap(x, y) := {Ctrl+x} Wait(30) $x 
+			{Ctrl+v} Wait(30) $y;
 wrap <tag> <tag> = wrap($1, $2);
 
 
 uncomment <small_n> lines = Repeat($1, {Home}{Del_2}{Down});
 
 quiv = " == ";
-whack = ";"{Enter};
+whack = {End}";"{Enter};
+define as = " := ";
+or = " || ";
+less than = " <= ";
+greater than = " >= ";
+submit = {Ctrl+Enter};
 
 # js
 function = "function ";
 # four = "for ()"{Left};
 # if = "if ()"{Left};
+funk body = {End}" {}"{Left}{Enter};
 
 # py
 print = "print()"{Left};
