@@ -8,10 +8,10 @@ This grammar is still in heavy development, and is rather a mess at the moment. 
 
 ##Grammar structure
 ###Global grammar
-* Commands\\\_global - contains global commands
-* Commands\\\_alphabet - contains alphabet and symbols
-* Commands\\\_programming - contains commands useful for coding across languages
-* Commands\\\_bugn - contains commands for interacting with the [bug.n tiling window manager](https://github.com/fuhsjr00/bug.n)
+* Commands\\\_global.vcl - contains global commands
+* Commands\\\_alphabet.vcl - contains alphabet and symbols
+* Commands\\\_programming.vcl - contains commands useful for coding across languages
+* Commands\\\_bugn.vcl - contains commands for interacting with the [bug.n tiling window manager](https://github.com/fuhsjr00/bug.n)
 
 These grammars are loaded on startup and active in all programs.
 
