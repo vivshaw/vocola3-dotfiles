@@ -28,7 +28,6 @@
 
 
 #Letters
-
 <alpha> = $1;
 sky <alpha> = {Shift+$1};
 
