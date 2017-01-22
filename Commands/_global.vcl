@@ -7,8 +7,8 @@
 <left_right> := Left | Right;
 <direction>  := Left | Right | Up | Down;
 <direction_two> := (rick = right
-	| leb = left
-	| ugh = up
+	| lop = left
+	| uck = up
 	| doom = down);
 
 <start_end> := (start = Home | End);
@@ -22,6 +22,7 @@
 	| length = len
 	| line = ln
 	| pixel = px
+	| sequence = seq
 	| string = str
 	| variable = var);
 
@@ -36,7 +37,7 @@ jump <small_n> = {Ctrl+Right_$1};
 line <start_end> = {$1};
 jump <start_end> = {Ctrl+$1};
 (righty | ricky) = {end};
-(lefty | lebby) = {home};
+(lefty | lobby) = {home};
 (up | ug) way = {Ctrl+Home};
 (down | doom) way = {Ctrl+End};
 new line = {End}{Enter};
@@ -56,6 +57,7 @@ grab <small_n> (line | Lines) = {Home}{Shift+End}{Shift+Right}{Shift+Down_ Eval(
 scratch = {Backspace};
 scratch <n> = {Backspace_$1};
 scratch <small_n> (word | words) = {Shift+Ctrl+Left_$1}{Backspace};
+bop = {Shift+Ctrl+Left}{Backspace};
 Del = {Delete};
 Del <n> = {Delete_$1};
 Del <small_n> (word | words) = {Shift+Ctrl+Right_$1}{Del};
@@ -72,6 +74,7 @@ kill <n> = {Home}{Shift+Down_$1}{Backspace};
 Sky = If(Dictation.CanGet(),
 	Dictation.Replace(String.ToggleInitialCase(Dictation.Get())),
 	{Ctrl+Shift+Left}{Ctrl+c} String.ToggleInitialCase(Clipboard.GetText()));
+Cap = {Ctrl+Shift+Left} {Ctrl+c} String.Capitalize(Clipboard.GetText());
 Fix Space = Dictation.Replace(String.ToggleInitialSpace(Dictation.Get()));
 Huge = Dictation.Replace( String.Capitalize( Dictation.Get() ));
 Huge 1..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.Capitalize(Clipboard.GetText());
@@ -79,8 +82,8 @@ Yell = If(Dictation.CanGet(),
 	Dictation.Replace(String.ToUpper(Dictation.Get())),
 	{Ctrl+Shift+Left}{Ctrl+c} String.ToUpper(Clipboard.GetText()));
 Yell 1..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.ToUpper(Clipboard.GetText());
-Lower That = Dictation.Replace(String.ToLower(Dictation.Get()));
-Lower 1..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.ToLower(Clipboard.GetText());
+Small That = Dictation.Replace(String.ToLower(Dictation.Get()));
+Small 1..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.ToLower(Clipboard.GetText());
 Book = Dictation.Replace(String.ToTitleCaseWord(Dictation.Get()));
 Book 2..9 = {Ctrl+Shift+Left_$1}{Ctrl+c} String.ToTitleCaseWord(Clipboard.GetText());
 Camel = Dictation.Replace( String.ToCamelCaseWord( Dictation.Get() ));
@@ -118,11 +121,13 @@ $end
 
 
 #Mouse
-chips = {LeftButton};
+chip = {LeftButton};
 dubs = {LeftButton}{LeftButton};
 trips = {LeftButton}{LeftButton}{LeftButton};
 rips = {RightButton};
 mids = {MiddleButton};
+hold = {LeftButton_Hold};
+unhold = {LeftButton_Release};
 
 
 #Miscellaneous keystrokes

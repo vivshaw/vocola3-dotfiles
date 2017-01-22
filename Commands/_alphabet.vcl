@@ -56,7 +56,8 @@ dash = " - ";
 dot = ".";
 eek = "=";
 qual = " = ";
-face = ":";
+fiss = ":";
+face = " : ";
 hat = "^";
 pip = "|";
 pipe = " | ";
@@ -102,4 +103,4 @@ right square = "]";
 
 #Combo symbols
 prexter = '("")'{Left}{Left};
-praise it = '({})'{Left}{Left};
+raisin = '({})'{Left}{Left};
