@@ -13,12 +13,12 @@ This grammar is still in heavy development, and is rather a mess at the moment. 
 * Commands\\\_programming.vcl - contains commands useful for coding across languages
 * Commands\\\_bugn.vcl - contains commands for interacting with the [bug.n tiling window manager](https://github.com/fuhsjr00/bug.n)
 
-These grammars are loaded on startup and active in all programs.
+These grammars are loaded on startup and active in all programs. You can tell which ones are global 'cause they start with an underscore.
 
-###Program grammars
+###App grammars
 * All other files in Commands\\
 
-These grammars are loaded when the associated program opens, are active only in that program, and are unloaded when the program closes.  I use these to hold program-specific commands, such as voice commands that map to program shortcuts. I also use them to load the appropriate  programming language grammar when I open an IDE for that language.
+These grammars are loaded when the associated program opens, are active only in that program, and are unloaded when the program closes.  I use these to hold program-specific commands, such as voice commands that map to bash commands, or to program shortcuts for my IDEs. I also use them to load the appropriate  programming language grammar when I open an IDE for that language.
 
 ###Programming language grammars
 * All files in Commands\\Languages\\
